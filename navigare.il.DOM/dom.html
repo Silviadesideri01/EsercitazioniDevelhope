@@ -1,10 +1,10 @@
-Stampa in ordine in console:
+<!--Stampa in ordine in console:
 
 l'elemento padre di ul.
 il secondo elemento figlio di ul.
 l'elemento fratello successivo del secondo li.
 l'elemento fratello precedente del secondo li.
-Il tutto utilizzando tutte e 4 le proprietà viste nel video.
+Il tutto utilizzando tutte e 4 le proprietà viste nel video.!-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,11 +23,11 @@ Il tutto utilizzando tutte e 4 le proprietà viste nel video.
     </ul>
     <script>
         const html = document.documentElement
-        const body= html.children[1] 
-        console.log(body) /*stampo elemento padre(body)*/
+        const body= html.children[1]
+        console.log(body) /*stampo elemento padre di ul(body)*/
 
-        const ul= body.children[3]
-        console.log(ul)/*stampo elemento figlio body, che ha 3 come indice numerico nell'array*/
+        const ul= body.children[0]
+        console.log(ul)/*stampo elemento figlio body(ul), che ha 0 come indice numerico nell'array*/
 
         const li2 = ul.children[1]
         console.log(li2) /*stampo il secondo figlio di ul(ovvero <li>2<li>) che ha 1 come indice numerico*/
