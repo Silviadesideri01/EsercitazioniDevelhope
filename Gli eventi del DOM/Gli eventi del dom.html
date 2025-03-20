@@ -1,0 +1,35 @@
+<!--Crea uno script che:
+Al click del bottone inserisca la modalità dark-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .theme {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dark Mode</h1>
+    <div>
+      <button class="btn">Dark Mode</button>
+    </div>
+    <script>
+      //seleziono l'elemento sul quale voglio operare, in questo caso sul bottone
+      const button = document.querySelector(".btn");
+      button.addEventListener("click", (event) => {
+        //dico al bottone di mettersi all'ascolto e di fare qualcosa quando viene cliccato
+        event.preventDefault();
+        //gli dico: quando vieni cliccato, metti questo tema scuro, aggiungendogli la classe nel CSS con sfondo nero.
+        //QUI, CAMBIO TEMA ALL'INTERA PAGINA selezionando l'elemento body.
+        document.body.classList.add("theme");
+        //QUI, CAMBIO TEMA AL BOTTONE, selezionando l'elemento button e assegnandogli la classe theme del CSS.
+        //button.classList.add("theme")
+      });
+    </script>
+  </body>
+</html>
