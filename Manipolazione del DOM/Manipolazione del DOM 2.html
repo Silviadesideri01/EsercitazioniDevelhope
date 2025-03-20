@@ -1,0 +1,66 @@
+<!--Recuperare il valore di ciascun campo di input e creare un oggetto person contenente le proprietà: firstName, lastName e age.
+Infine recuperare l'elemento form e aggiungere l'attributo data-person contenente l'oggetto person in formato json.-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <form>
+        <div>
+          <label>First Name:</label>
+          <input type="text" class="form-input" id="firstName" value="Mario" />
+        </div>
+        <div>
+          <label>Last Name:</label>
+          <input type="text" class="form-input" id="lastName" value="Rossi" />
+        </div>
+        <div>
+          <label>Age:</label>
+          <input type="number" class="form-input" id="age" value="25" />
+        </div>
+        <button type="submit">iscriviti</button>
+      </form>
+    </div>
+
+    <script>
+      function personObject(event) {
+        event.preventDefault();
+        //Recuperare il valore di ciascun campo di input
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const age = document.getElementById("age").value;
+        console.log(`valori recuperati: 
+        Nome:${firstName} 
+        Cognome: ${lastName} 
+        Età:${age}`);
+
+        //creare un oggetto person contenente le proprietà: firstName, lastName e age.
+        const newUtente = {
+          firstName: firstName,
+          lastName: lastName,
+          age: age,
+        };
+
+        console.log("creazione dell'oggetto", newUtente);
+
+        //conversione dell'oggetto person in formato json.
+        const json = JSON.stringify(newUtente);
+        console.log("convertito in formato json", json);
+
+        // recuperare l'elemento form e aggiungere l'attributo data-person contenente l'oggetto person in formato json
+        const form = document.querySelector("form");
+        form.setAttribute("data-person", json);
+        console.log(
+          "aggiunto l'attributo data-person con l'oggetto in formato json",
+          form
+        );
+      }
+      const form = document.querySelector("form");
+      form.addEventListener("submit", personObject);
+    </script>
+  </body>
+</html>
