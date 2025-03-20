@@ -1,0 +1,39 @@
+<!--Crea la tua To-Do List mediante i metodi visti nel video.
+Crea una funzione che ti permetterà di:
+Creare una lista aggiungendo il task desiderato mediante il bottone Aggiungi.
+Creare un checkbox per ogni task aggiunto.-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div>
+      <h1>To-do List</h1>
+      <input type="text" placeholder="Aggiungi un task alla lista" />
+      <button onclick="addProduct()">Aggiungi</button>
+      <ul></ul>
+    </div>
+    <script>
+      function addProduct() {
+        const input = document.querySelector("input");
+        const text = input.value; //prende il valore inserito nell'input
+        const ul = document.querySelector("ul"); //prendo l'elemento ul
+        const li = document.createElement("li"); //creo la lista
+        const checkbox = document.createElement("input");
+        checkbox.setAttribute("type", "checkbox"); //creo un nuovo elemento di tipo checkbox
+        let span = document.createElement("span");
+        span.textContent = text; // Metto il testo dentro lo span
+
+        li.appendChild(checkbox); //aggiungo l'elemento checkbox alla lista
+        li.appendChild(span); // aggiungo il testo alla lista
+        ul.appendChild(li); //aggiungo la lista all'ul
+        input.value = ""; //ripulisco il campo di imput ad ogni aggiungi
+      }
+    </script>
+  </body>
+</html>
