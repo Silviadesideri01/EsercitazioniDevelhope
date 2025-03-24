@@ -1,0 +1,68 @@
+<!--Lo scopo di questo task è di mostrare nella pagina una carta de "Il signore degli anelli" con:
+
+Nome del personaggio
+immagine del personaggio
+Prova a fetchare una card dal db del gioco di carte di Lord of the Rings, 
+la documentazione dell'API la puoi trovare a questo link: https://ringsdb.com/api/doc
+Fai in modo che nella tua pagina html spuntino il nome del personaggio della carta, la sua immagine.-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Lord of the Rings</title>
+    <!-- importo il font del titolo della card per poterlo utilizzare-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <style>
+      .nomepersonaggio {
+        font-family: "Julius Sans One", sans-serif;
+      }
+    </style>
+    <h1 class="nomepersonaggio"></h1>
+    <img class="imgpersonaggio" src="" width="200" alt="card image Aragon" />
+  </body>
+</html>
+
+<script>
+  //mi creo una funzione asincrona, utilizzo try catch per gestire gli errori, await per attendere le risposte
+  //utilizzo un async che mi ritorna una promise, senza usare then e catch.
+  async function fetchData() {
+    try {
+      //faccio chiamata alla fetch
+      const response = await fetch("https://ringsdb.com/api/public/cards/");
+
+      //trasformo la risposta fetch in json, ottengo un array di oggetti
+      const json = await response.json();
+
+      //prendo e salvo l'oggetto in prima posizione dell'array con indice 0.
+      const elemento1 = json[0];
+      console.log(elemento1); //lo visulizzo con tutte le sue caratteristiche.
+
+      //prendo dall'elemento principale l'immagine del personaggio che è all'interno di imagesrc, è un oggetto quindi: oggetto.chiave
+      const immaginePersonaggio = elemento1.imagesrc;
+      //prendo il nome del personaggio, che è all'interno della chiave name.
+      const nomePersonaggio = elemento1.name;
+      console.log(immaginePersonaggio, nomePersonaggio); //li visualizzo
+
+      //dopo aver salvato il nome e l'immagine della card del personaggio, prendo i miei elementi html e assegno loro, i valori recuperati
+      const h1 = document.querySelector(".nomepersonaggio");
+      const img = document.querySelector(".imgpersonaggio");
+      h1.innerHTML = nomePersonaggio; //assegno al titolo il valore salvato nella costante ovvero il nome del personaggio.
+
+      //img.setAttribute("src", immaginePersonaggio) non mi legge imagesrc del documento fornito!
+
+      //quindi, ho aperto la card, l'ho ispezionata e ho recuperato l'indirizzo dell'immagine cosi.
+      //con set attribute ho attribuito al src(elementohtml), l'indirizzo dell'immagine della card corrispondente.
+      img.setAttribute("src", "https://ringsdb.com/bundles/cards/01001.png");
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  fetchData();
+</script>
