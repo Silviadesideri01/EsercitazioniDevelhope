@@ -29,6 +29,9 @@ Fai in modo che nella tua pagina html spuntino il nome del personaggio della car
 </html>
 
 <script>
+  function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min); // ritorna un numero randomico, da passare all'array in []
+  }
   //mi creo una funzione asincrona, utilizzo try catch per gestire gli errori, await per attendere le risposte
   //utilizzo un async che mi ritorna una promise, senza usare then e catch.
   async function fetchData() {
@@ -39,8 +42,8 @@ Fai in modo che nella tua pagina html spuntino il nome del personaggio della car
       //trasformo la risposta fetch in json, ottengo un array di oggetti
       const json = await response.json();
 
-      //prendo e salvo l'oggetto in prima posizione dell'array con indice 0.
-      const elemento1 = json[0];
+      //prendo e salvo l'oggetto in posizione random dell'array.
+      const elemento1 = json[randomNumber(0,json.length-1)]; // Fornisce una carta randomica ad ogni refresh
       console.log(elemento1); //lo visulizzo con tutte le sue caratteristiche.
 
       //prendo dall'elemento principale l'immagine del personaggio che è all'interno di imagesrc, è un oggetto quindi: oggetto.chiave
@@ -54,11 +57,11 @@ Fai in modo che nella tua pagina html spuntino il nome del personaggio della car
       const img = document.querySelector(".imgpersonaggio");
       h1.innerHTML = nomePersonaggio; //assegno al titolo il valore salvato nella costante ovvero il nome del personaggio.
 
-      //img.setAttribute("src", immaginePersonaggio) non mi legge imagesrc del documento fornito!
+      img.setAttribute("src", `https://ringsdb.com${immaginePersonaggio}`); //non mi legge imagesrc del documento fornito percge avanti bisogna mettere l'http.
 
       //quindi, ho aperto la card, l'ho ispezionata e ho recuperato l'indirizzo dell'immagine cosi.
       //con set attribute ho attribuito al src(elementohtml), l'indirizzo dell'immagine della card corrispondente.
-      img.setAttribute("src", "https://ringsdb.com/bundles/cards/01001.png");
+      //img.setAttribute("src", "https://ringsdb.com/bundles/cards/01001.png");
     } catch (error) {
       console.error(error);
     }
