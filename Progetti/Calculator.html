@@ -5,16 +5,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="CalculatorStyle.css" />
-    <script type="module" src="script.js"></script>
+    <script type="module" src="Calculator.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <h1 class="titolo">CALCULATOR</h1>
     <div class="open-space">
-      <button class="display"></button>
+      <input type="text" id="display" readonly />
     </div>
     <div class="display2">
-      <button class="square">&#8592</button>
-      <button class="square">C</button>
+      <button class="square" id="backspace">&#8592;</button>
+      <button class="square" id="clear">C</button>
       <button class="square">00</button>
       <button class="square">+</button>
       <button class="square">7</button>
@@ -31,9 +35,8 @@
       <button class="square">/</button>
       <button class="square">0</button>
       <button class="square">.</button>
-      <button class="square">=</button>
+      <button class="square" id="equal">=</button>
       <button class="square">%</button>
     </div>
-    
   </body>
 </html>
