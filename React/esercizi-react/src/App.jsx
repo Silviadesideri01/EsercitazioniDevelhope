@@ -1,4 +1,4 @@
-import Hello from "../../Components/Hello"; //importo il componente Hello, per poterlo utilizzare e visualizzare
+import Hello from "../Components/Hello"; //importo il componente Hello, per poterlo utilizzare e visualizzare
 
 function App() {
   return (
