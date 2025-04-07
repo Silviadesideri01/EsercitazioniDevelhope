@@ -13,7 +13,7 @@ export function Welcome({ name = "Utente" }) {
   //Ho impostato un valore di defoult a name, nel caso usassi il componente senza valorizzare la props.
   return (
     <div>
-      <p>Welcome, {name}!</p>
+      <p>Welcome, <strong>{name}!</strong></p>
       <Age age="24" />
     </div>
   );

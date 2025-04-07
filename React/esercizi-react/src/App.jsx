@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       {/*<Hello /> Chiamata del componente/rendering*/}
-      <Welcome name={<strong>Silvia</strong>} />
+      <Welcome name="Silvia" />
       {/*valorizzo la props name ed age, assegnando il valore all'attributo.*/}
     </>
   );
