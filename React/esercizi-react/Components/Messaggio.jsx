@@ -1,3 +1,3 @@
 export function Messaggio() {
-    return <p>Sei molto giovane!</p> 
+  return <p>Sei molto giovane!</p>;
 }
