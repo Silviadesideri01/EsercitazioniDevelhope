@@ -2,6 +2,7 @@ import Hello from "../Components/Hello"; //importo il componente Hello, per pote
 import { Welcome } from "../Components/Welcome"; //importo il componente Welcome
 import { AlertClock } from "../Components/AlertClock";
 import "./App.css";
+import { Counter } from "../Components/Counter";
 
 //Qui dichiaro la funzione che gestirà l'evento e verrà assegnata al valore di onClick come props
 function NewDate() {
@@ -17,6 +18,7 @@ function App() {
       {/*valorizzo la props name ed age, assegnando il valore all'attributo.*/}
       <AlertClock date={NewDate} />{" "}
       {/* passo la funzione che gestisce l'evento come props del componente AlertClock */}
+      <Counter/>
     </>
   );
 }
