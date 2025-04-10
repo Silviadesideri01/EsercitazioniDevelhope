@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 //Creare un componente funzione Counter e creare una nuova variabile di stato denominata counter inizializzata a 0.
 
@@ -8,21 +8,26 @@ import { useState } from "react";
 
 export function Counter({ initialValue = 0 }) {
   //passo il valore iniziale di usestate come props, inizializzato a 0.
-  const [counter, setConteggio] = useState(initialValue);
+  const [currentValue, setConteggio] = useState(initialValue);
+
+  //Aggiungi un effetto collaterale al componente Counter che stampi il valore corrente del contatore all'interno della console.
+  useEffect(() => {
+    console.log(`the current value is: ${currentValue}`);
+  }, [currentValue]);
 
   const increment = () => {
-    setConteggio((initialValue) => initialValue + 1); //mi assicuro che il valore di conteggio sia sempre inizializzato a 0.
+    setConteggio((currentValue) => currentValue + 1); //mi assicuro che il valore di conteggio sia sempre inizializzato a 0.
   };
 
   const decrement = () => {
-    setConteggio((initialValue) => initialValue - 1);
+    setConteggio((currentValue) => currentValue - 1);
   };
   const reset = () => {
     setConteggio(initialValue);
   };
   return (
     <div>
-      <h2>Hai cliccato {counter} volte</h2>
+      <h2>Hai cliccato {currentValue} volte</h2>
       <button onClick={increment}>Incrementa</button>
       <button onClick={decrement}>Decrementa</button>
       <button onClick={reset}>Reset</button>
