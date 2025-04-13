@@ -13,7 +13,7 @@ export function Counter({ initialValue = 0 }) {
   //Aggiungi un effetto collaterale al componente Counter che stampi il valore corrente del contatore all'interno della console.
   useEffect(() => {
     console.log(`the current value is: ${currentValue}`);
-  }, [currentValue]);
+  }, [currentValue]); //update ascolta il cambiamento dei valori. 
 
   const increment = () => {
     setConteggio((currentValue) => currentValue + 1); //mi assicuro che il valore di conteggio sia sempre inizializzato a 0.

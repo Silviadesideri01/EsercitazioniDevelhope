@@ -4,6 +4,9 @@ import { AlertClock } from "../Components/AlertClock";
 import "./App.css";
 import { Counter } from "../Components/Counter";
 import { Clock } from "../Components/Clock";
+import { MouseClicker } from "../Components/MouseClicker";
+import EsercizioUseState from "../Components/EsercizioUseState";
+
 
 //Qui dichiaro la funzione che gestirà l'evento e verrà assegnata al valore di onClick come props
 function NewDate() {
@@ -21,6 +24,9 @@ function App() {
       {/* passo la funzione che gestisce l'evento come props del componente AlertClock */}
       <Counter />
       <Clock />
+      <MouseClicker/>
+      <EsercizioUseState/>
+
     </>
   );
 }

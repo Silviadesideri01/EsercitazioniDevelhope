@@ -11,10 +11,10 @@ export function Clock() {
       setTime(new Date());
     }, 1000);
     return () => {
-      console.log("Stop time...");
+      console.log("Stop time..."); //fase di anmounth, quando il componente viene smontato.
       clearInterval(intervalID);
     };
-  }, []);
+  }, []);//fase mounth, non ha nessuna dipendenza useeffect avviene a prescindere
 
   return (
     <div>
