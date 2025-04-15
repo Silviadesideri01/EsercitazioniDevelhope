@@ -27,5 +27,5 @@ export function MouseClicker() {
 //Come è possibile evitare che l'attributo name del pulsante venga visualizzato sulla console quando si fa clic sull'immagine?
 //Per evitare che l'attributo name del pulsante si visualizzi in colsole quando clicchiamo sull'immagine, basta stampare semplicemente event.target,
 //in questo modo visualizziamo solo l'elemento effettivo sul quale abbiamo cliccato e che ha scatenato l'evento, mentre se utilizziamo event.currentTarget
-//È l’elemento su cui è stato agganciato il listener, quindi normalmente il componente React a cui hai assegnato l’evento, per questo, visualizziamo in console
+//ci mostra l’elemento su cui è stato agganciato il listener, quindi normalmente il componente React a cui hai assegnato l’evento, per questo, visualizziamo in console
 //il bottone e non l'immagine stessa.
