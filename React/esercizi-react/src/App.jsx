@@ -8,6 +8,7 @@ import { MouseClicker } from "../Components/MouseClicker";
 import EsercizioUseState from "../Components/EsercizioUseState";
 import { InteractiveWelcome } from "../Components/InteractiveWelcome";
 import { Login } from "../Components/Login";
+import { UncontrolledLogin } from "../Components/UncontrolledLogin";
 
 //Qui dichiaro la funzione che gestirà l'evento e verrà assegnata al valore di onClick come props
 function NewDate() {
@@ -32,6 +33,8 @@ function App() {
       <EsercizioUseState/> */}
       <InteractiveWelcome />
       <Login onLogin={handleLogin} />
+
+      <UncontrolledLogin />
     </>
   );
 }

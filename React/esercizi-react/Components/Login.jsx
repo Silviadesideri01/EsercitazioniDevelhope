@@ -21,7 +21,7 @@ export function Login({ onLogin }) {
 
   return (
     <div>
-      <form onSubmit= {handleLogin}>
+      <form onSubmit={handleLogin}>
         <input
           type="text"
           name="username"

@@ -9,13 +9,12 @@ export function InteractiveWelcome() {
   const onChangeinput = (event) => {
     setValue(event.target.value);
     console.log(event.target.value);
-
   };
 
   return (
     <div>
-      <h1>My form</h1>
-      <WelcomeUser name={value}/>
+      <h1>Controlled form</h1>
+      <WelcomeUser name={value} />
       <input
         type="text"
         name="name"
