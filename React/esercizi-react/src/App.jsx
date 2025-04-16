@@ -9,6 +9,7 @@ import EsercizioUseState from "../Components/EsercizioUseState";
 import { InteractiveWelcome } from "../Components/InteractiveWelcome";
 import { Login } from "../Components/Login";
 import { UncontrolledLogin } from "../Components/UncontrolledLogin";
+import { FocusableInput } from "../Components/FocusableInput";
 
 //Qui dichiaro la funzione che gestirà l'evento e verrà assegnata al valore di onClick come props
 function NewDate() {
@@ -35,6 +36,7 @@ function App() {
       <Login onLogin={handleLogin} />
 
       <UncontrolledLogin />
+      <FocusableInput/>
     </>
   );
 }
