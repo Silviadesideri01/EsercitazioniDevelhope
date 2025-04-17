@@ -2,45 +2,46 @@
 // contenente tre input: un input per il nome utente, uno per la password e una casella di controllo "Ricorda".
 // Aggiungi un pulsante "Accedi" al componente Login.
 
-export function UncontrolledLogin() {
-  const onLogin = (event) => {
+export const UncontrolledLogin = ({ onLogin }) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
+
     const form = event.target;
-    const username = form.elements.username.value;
-    const password = form.elements.password.value;
-    const checkbox = form.elements.checkbox.checked;
+    const nomeUtente = form.nomeUtente.value;
+    const password = form.password.value;
+    const checkbox = form.checkbox.checked;
 
-    const data = {
-      username,
-      password,
-      checkbox,
-    };
-
-    console.log("Dati dal submit (DOM):", data);
+    // Esegui la funzione passata via prop con i dati
+    onLogin({ nomeUtente, password, checkbox });
   };
 
+  const loginWithFormData = (event) => {
+    event.preventDefault();
+
+    const form = event.target.form; // otteniamo il form associato al bottone
+    const formData = new FormData(form);
+
+    const nomeUtente = formData.get("nomeUtente");
+    const password = formData.get("password");
+    const checkbox = formData.get("checkbox") === "on";
+
+    console.log("Dati da FormData:", { nomeUtente, password, checkbox });
+  };
   return (
-    <div>
-      <form onSubmit={onLogin}>
+    <form onSubmit={handleSubmit}>
         <h1>Uncontrolled form</h1>
-        <input
-          type="text"
-          name="username"
-          placeholder="inserisci il tuo nome"
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="inserisci la tua pw"
-          required
-        />
-        <label htmlFor="checkbox">Ricordami</label>
-        <input type="checkbox" name="checkbox" /> <br />
-        <button type="submit" onSubmit={onLogin}>
-          Accedi
-        </button>
-      </form>
-    </div>
+      <input type="text" name="nomeUtente" placeholder="Nome utente" />
+      <input type="password" name="password" placeholder="Password" />
+      <label>
+        <input type="checkbox" name="checkbox" />
+        Ricorda
+      </label>
+      <br />
+      <button type="submit">Accedi</button>
+      <button type="button" onClick={loginWithFormData}>
+        Accedi con FormData
+      </button>
+    </form>
   );
-}
+};
+

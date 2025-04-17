@@ -33,9 +33,9 @@ function App() {
       <MouseClicker/>
       <EsercizioUseState/> */}
       <InteractiveWelcome />
-      <Login onLogin={handleLogin} />
+      {/* <Login onLogin={handleLogin} /> */}
 
-      <UncontrolledLogin />
+      <UncontrolledLogin onLogin={handleLogin} />
       <FocusableInput/>
     </>
   );
