@@ -1,6 +1,7 @@
 import "./App.css";
 import { Color } from "../Components/Color";
 import { Colors } from "../Components/Colors";
+import { TodoList } from "../Components/ToDoList";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           { id: 7, name: "Violet" },
         ]}
       />
+      <TodoList />
     </>
   );
 }
