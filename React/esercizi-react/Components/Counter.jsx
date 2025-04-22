@@ -13,7 +13,7 @@ export function Counter({ initialValue = 0 }) {
   //Aggiungi un effetto collaterale al componente Counter che stampi il valore corrente del contatore all'interno della console.
   useEffect(() => {
     console.log(`the current value is: ${currentValue}`);
-  }, [currentValue]); //update ascolta il cambiamento dei valori. 
+  }, [currentValue]); //update ascolta il cambiamento dei valori.
 
   const increment = () => {
     setConteggio((currentValue) => currentValue + 1); //mi assicuro che il valore di conteggio sia sempre inizializzato a 0.
@@ -25,12 +25,22 @@ export function Counter({ initialValue = 0 }) {
   const reset = () => {
     setConteggio(initialValue);
   };
+  //Modificare il componente Counter aggiungendo un attributo di stile in linea,
+  // modificando la dimensione e il colore del carattere.
   return (
     <div>
-      <h2>Hai cliccato {currentValue} volte</h2>
-      <button onClick={increment}>Incrementa</button>
-      <button onClick={decrement}>Decrementa</button>
-      <button onClick={reset}>Reset</button>
+      <h2 style={{ fontSize: "40px", color: "violet" }}>
+        Hai cliccato {currentValue} volte
+      </h2>
+      <button style={{ fontSize: "20px", color: "violet" }} onClick={increment}>
+        Incrementa
+      </button>
+      <button style={{ fontSize: "20px", color: "red" }} onClick={decrement}>
+        Decrementa
+      </button>
+      <button style={{ fontSize: "20px", color: "orange" }} onClick={reset}>
+        Reset
+      </button>
     </div>
   );
 }

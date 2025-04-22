@@ -26,6 +26,7 @@ export function Login({ onLogin }) {
           type="text"
           name="username"
           required
+          placeholder="username"
           onChange={hadleInputChange}
           value={data.username}
         />
@@ -33,6 +34,7 @@ export function Login({ onLogin }) {
           type="password"
           name="password"
           required
+          placeholder="password"
           onChange={hadleInputChange}
           value={data.password}
         />
@@ -47,8 +49,12 @@ export function Login({ onLogin }) {
         <button
           type="submit"
           disabled={data.password && data.username ? false : true}
+          className={data.password.length < 8 ? "redcolor" : "greencolor"}
         >
           Login
+          {/* Modificare il componente Login in modo che 
+          il colore di sfondo del pulsante "Login" sia "rosso" quando la lunghezza della password immessa è inferiore a 8 caratteri, 
+          verde negli altri casi. */}
         </button>
         <button type="button" onClick={reset}>
           Reset
