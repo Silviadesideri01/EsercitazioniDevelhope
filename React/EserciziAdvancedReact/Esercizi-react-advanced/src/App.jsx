@@ -1,5 +1,4 @@
 import "./App.css";
-import { Colors } from "../Components/Colors";
 import { TodoList } from "../Components/ToDoList";
 import { ClickCounter } from "../Components/ClickCounter";
 import { NameList } from "../Components/NameList";
@@ -34,17 +33,6 @@ function App() {
             <option value="fr">Francese</option>
           </select>
         </div>
-
-        <Colors
-          colorList={[
-            { id: 2, name: "Red" },
-            { id: 3, name: "Blue" },
-            { id: 4, name: "Yellow" },
-            { id: 5, name: "Pink" },
-            { id: 6, name: "Green" },
-            { id: 7, name: "Violet" },
-          ]}
-        />
         <TodoList />
         <ClickCounter />
         <NameList names={["Sara", "Lucia", "Lisa", "Mario", "Edorardo"]} />
