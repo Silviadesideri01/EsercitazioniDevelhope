@@ -2,6 +2,7 @@ import { CustomCounter } from "../Components/CustomCounter";
 import { CustomInput } from "../Components/CustomInput";
 import { GithubUser } from "../Components/GithubUser";
 import GithubUsers from "../Components/GithubUsers";
+import LocationDisplay from "../Components/LocationDisplay";
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <GithubUsers/>
       <CustomCounter/>
       <CustomInput/>
+      <LocationDisplay/>
     </>
   );
 }
