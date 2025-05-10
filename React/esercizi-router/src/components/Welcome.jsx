@@ -8,6 +8,7 @@ export function Welcome({name="Utente"}){
         <Link to="/Contacts">Contatti</Link> <br />
         <Link to="/notfound">Ritenta</Link> <br />
         <Link to="/users">UsersGithub</Link>
+        <Link to="users">UserwhitSWR</Link>
         </>
 
     )

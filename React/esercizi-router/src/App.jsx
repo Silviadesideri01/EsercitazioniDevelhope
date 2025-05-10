@@ -32,6 +32,7 @@ function App() {
         
         <Route path="/users" element={<GithubUserList />} />
         <Route path="/users/:username" element={<ShowGithubUser />} />
+        <Route path="users" element={<useGithubUser/>} />
 
         {/*Aggiungi un percorso Non trovato che viene visualizzato quando un utente naviga verso un percorso che non esiste. */}
         <Route
