@@ -1,4 +1,5 @@
-import { ChatApp } from "../Components/ChatApp";
+
+import ChatBot from "../Components/ChatBot";
 import { CustomCounter } from "../Components/CustomCounter";
 import { CustomInput } from "../Components/CustomInput";
 import { GithubUser } from "../Components/GithubUser";
@@ -14,7 +15,8 @@ function App() {
       <CustomCounter/>
       <CustomInput/>
       <LocationDisplay/>
-     <ChatApp/>
+      <ChatBot/>
+     
     </>
   );
 }
