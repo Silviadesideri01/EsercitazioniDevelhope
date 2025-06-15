@@ -4,6 +4,7 @@ Associare listener di eventi per ciascun evento e disconnettere i relativi dati.
 
 const { EventEmitter } = require("node:events");
 //EventEmitter serve per la gestione degli eventi.
+//Tutti gli eventi sono custom, sono generati in autonomia.
 
 function createNewsFeed() {
   const emitter = new EventEmitter(); //genera eventi, in questo caso gli eventi sono: "newsEvent", "breackingNews", "Error".
@@ -22,6 +23,7 @@ function createNewsFeed() {
   emitter.on("error", (data) => {
     console.log(data);
   });
+  
 
   setInterval(() => {
     //Il metodo .emit() serve a scatenare (o "emettere") un evento specifico.

@@ -124,3 +124,4 @@ JOIN
     courses AS c ON e.course_id = c.id
 ORDER BY
     s.name, c.title; -- Ordina per nome dello studente e poi per titolo del corso
+
