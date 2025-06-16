@@ -8,6 +8,7 @@ const app = express();
 const port = 3000;
 
 app.use(morgan("dev")); //configurazione di morgan in "dev", mostra LOG precisi e dettagliati.
+app.use(express.json()) //configura le risposte in arrivo (POST,PUT,PATCH)in formato json
 
 //alias di tipo Planets con corrispettivi tipi da rispettare nell'utilizzo.
 type Planet = {
@@ -30,6 +31,8 @@ let planets: Planets = [
 
 app.get("/api/planets", (req, res) => {
   res.status(200).json(planets); //passiamo il json creato nella risposta dell'API
+  //.send metodo che: imposta automaticamente l'header Content-Type appropriato alla richiesta.
+  //alternativa: .json (che definisci tu che il content/type sarà application/json).
 });
 
 app.get("/api/planets/:id", (req, res) => {
@@ -45,7 +48,7 @@ app.get("/api/planets/:id", (req, res) => {
     console.log(`Errore: Pianeta con ID ${id} non trovato.`);
 
     // Invia una risposta 404 al client con un messaggio JSON
-    return res.status(404).json({ message: "Pianeta non trovato." });
+    return res.status(404).send({ message: "Pianeta non trovato." });
   }
 
   // Se il pianeta viene trovato, inviamo una risposta 200 con i dati del pianeta
