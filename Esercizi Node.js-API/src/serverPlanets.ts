@@ -17,24 +17,6 @@ const port = 3000;
 app.use(morgan("dev")); //configurazione di morgan in "dev", mostra LOG precisi e dettagliati.
 app.use(express.json()); //configura le risposte in arrivo (POST,PUT,PATCH)in formato json
 
-//alias di tipo Planets con corrispettivi tipi da rispettare nell'utilizzo.
-type Planet = {
-  id: string;
-  name: string;
-};
-
-type Planets = Planet[]; //la variabile tipizzata a planets deve essere un Array che rispetti la tipizzazione di Planet. (id:number, name:string)
-
-let planets: Planets = [
-  {
-    id: "1",
-    name: "Earth",
-  },
-  {
-    id: "2",
-    name: "Mars",
-  },
-];
 
 app.get("/api/planets", getAllPlanets);
 

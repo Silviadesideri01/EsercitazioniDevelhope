@@ -1,4 +1,4 @@
-import { Request, Response } from "express";
+import { Request, Response } from "express"; //importo Request e Response da express, grazie ai type tipizziamo Req e Res.
 
 //alias di tipo Planets con corrispettivi tipi da rispettare nell'utilizzo.
 type Planet = {
@@ -101,6 +101,8 @@ const deletePlanetById = (req: Request, res: Response) => {
   console.log(planets);
 };
 
+
+//esportiamo Tutte le funzioni create per gestire le API, per poi importarle nel server.ts.
 export {
   getAllPlanets,
   getOnePlanetById,
