@@ -5,6 +5,7 @@ import morgan from "morgan" //Morgan è un logger di richieste HTTP, ogni volta 
 const app = express()
 const port = 3000
 
+
 app.use(morgan("dev")) //configurazione di morgan in "dev", mostra LOG precisi e dettagliati.
 
 //parte centrale che definisce una rotta HTTP METODO GET.
