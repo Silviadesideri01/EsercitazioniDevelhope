@@ -16,7 +16,8 @@ const setupDB = async () => {
     await db.none(`
       CREATE TABLE IF NOT EXISTS planets ( 
         id SERIAL NOT NULL PRIMARY KEY, 
-        name TEXT NOT NULL
+        name TEXT NOT NULL,
+        imagePlanet TEXT
       );
     `);
     console.log("Tabella 'planets' creata o già esistente."); // Messaggio più chiaro

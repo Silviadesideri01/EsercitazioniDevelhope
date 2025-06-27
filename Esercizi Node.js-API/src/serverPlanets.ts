@@ -9,9 +9,22 @@ import {
   getAllPlanets,
   getOnePlanetById,
   updatePlanetById,
+  uploadImage
 } from "./Controllers/Planets.js";
 
+//CONFIGURAZIONE DI MULTER
+import multer from "multer";
 
+const storage = multer.diskStorage({
+  destination: (res, file, cb) => {
+    cb(null, "./uploads");
+  },
+  filename: (res, file, cb) => {
+    cb(null, file.originalname);
+  },
+});
+
+const upload = multer({ storage });
 
 const app = express();
 const port = 3000;
@@ -37,3 +50,6 @@ app.delete("/api/planets/:id", deletePlanetById);
 app.listen(port, () => {
   console.log(`listering on port http://localhost:${port}`);
 });
+
+//UPLOAD FILE 
+app.post("/api/planets/:id/image", upload.single("image"), uploadImage)

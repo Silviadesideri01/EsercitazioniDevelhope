@@ -1,0 +1,19 @@
+
+Aggiungere image campo alla planetstabella nel DB.
+Imposta POST /planets/:id/image il percorso per il caricamento del file (immagine del pianeta).
+Memorizzare il file immagine localmente (su disco).
+Salva il percorso del file nel DB (aggiorna il pianeta corretto).
+Utilizzo
+Aggiungi image TEXT alla tua CREATE TABLE planets query SQL.
+
+Utilizzare multer la libreria per salvare i file nella /uploadscartella.
+
+Aggiungi image TEXTalla CREATE TABLE planetsquery SQL (nella configurazione del tuo DB).
+
+Utilizzare questa query SQL per aggiornare l'immagine del pianeta:
+
+UPDATE planets
+SET image=$2
+WHERE id=$1;
+Controllo
+Utilizza Postman per testare il percorso di caricamento (puoi inviare un file in Postman).
